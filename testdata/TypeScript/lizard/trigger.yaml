@@ -1,0 +1,18 @@
+tool: lizard
+version: "1.23.0"
+language: typescript
+language_version: "TypeScript 5.x"
+technique: "Cyclomatic Complexity"
+classification: "Static Analysis Metric"
+target_files:
+  - src/complex_order_engine.ts
+run:
+  command: "lizard -C 15 -w src/"
+thresholds:
+  cyclomatic_complexity_warning: 10
+  cyclomatic_complexity_critical: 15
+expects:
+  - function: "processComplexOrder"
+    cyclomatic_complexity: 25
+    warnings: 1
+    triggered: true

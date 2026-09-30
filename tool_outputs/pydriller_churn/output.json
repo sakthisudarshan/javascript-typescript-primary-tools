@@ -1,0 +1,15 @@
+{
+  "tool": "pydriller_churn",
+  "timestamp": "2026-09-30T08:22:53Z",
+  "metadata": {
+    "metric": "Code Churn Score"
+  },
+  "data": {
+    "total_commits_analyzed": 0,
+    "files_modified": {},
+    "total_lines_added": 0,
+    "total_lines_deleted": 0,
+    "churn_score": 0,
+    "error": "F:\\Javascript and Typescript"
+  }
+}

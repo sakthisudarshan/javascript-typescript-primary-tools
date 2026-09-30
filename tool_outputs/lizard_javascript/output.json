@@ -1,0 +1,12 @@
+{
+  "tool": "lizard_javascript",
+  "timestamp": "2026-09-30T08:22:26Z",
+  "metadata": {
+    "metric": "Execution Path Integrity",
+    "threshold": 15
+  },
+  "data": {
+    "raw_stdout": "================================================\n  NLOC    CCN   token  PARAM  length  location  \n------------------------------------------------\n      71     27    348      4      77 calculateComplexRiskScore@6-82@testdata/JavaScript/lizard/src/complex_risk.js\n1 file analyzed.\n==============================================================\nNLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file\n--------------------------------------------------------------\n     72      71.0    27.0      348.0         1     testdata/JavaScript/lizard/src/complex_risk.js\n\n===========================================================================================================\n!!!! Warnings (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100) !!!!\n================================================\n  NLOC    CCN   token  PARAM  length  location  \n------------------------------------------------\n      71     27    348      4      77 calculateComplexRiskScore@6-82@testdata/JavaScript/lizard/src/complex_risk.js\n==========================================================================================\nTotal nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt\n------------------------------------------------------------------------------------------\n        72      71.0    27.0      348.0        1            1      1.00    1.00\n",
+    "ccn": 27
+  }
+}

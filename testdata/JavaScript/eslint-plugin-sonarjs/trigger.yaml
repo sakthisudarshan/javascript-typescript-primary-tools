@@ -1,0 +1,18 @@
+tool: eslint-plugin-sonarjs
+version: "0.24.0"
+language: javascript
+language_version: "ES2022"
+technique: "Cognitive Complexity"
+classification: "Maintainability Evaluation"
+target_files:
+  - src/cognitive_debt.js
+run:
+  command: "npx eslint src/cognitive_debt.js -c .eslintrc.json --format json"
+thresholds:
+  cognitive_complexity_max: 5
+expects:
+  - rule: "sonarjs/cognitive-complexity"
+    function: "evaluateOrderDiscount"
+    measured_cognitive_complexity: 46
+    allowed_cognitive_complexity: 5
+    triggered: true

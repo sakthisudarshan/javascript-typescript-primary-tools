@@ -1,0 +1,68 @@
+{
+  "tool": "ts_morph_du_paths",
+  "timestamp": "2026-09-30T08:22:45Z",
+  "metadata": {
+    "metric": "All-Defs % / DU-Path Validation",
+    "coverage_pct": 83.33,
+    "dead_definitions": 1
+  },
+  "data": {
+    "totalDefinitions": 6,
+    "coveredDefinitions": 5,
+    "deadDefinitions": 1,
+    "allDefsCoveragePercent": 83.33,
+    "totalUses": 11,
+    "cUses": 9,
+    "pUses": 2,
+    "definitions": [
+      {
+        "variableName": "accumulatedBalance",
+        "line": 10,
+        "hasUses": true,
+        "cUseCount": 4,
+        "pUseCount": 1,
+        "isDeadDefinition": false
+      },
+      {
+        "variableName": "deadAuditTracker",
+        "line": 11,
+        "hasUses": false,
+        "cUseCount": 0,
+        "pUseCount": 0,
+        "isDeadDefinition": true
+      },
+      {
+        "variableName": "compoundMultiplier",
+        "line": 12,
+        "hasUses": true,
+        "cUseCount": 2,
+        "pUseCount": 0,
+        "isDeadDefinition": false
+      },
+      {
+        "variableName": "bonusTierRate",
+        "line": 15,
+        "hasUses": true,
+        "cUseCount": 1,
+        "pUseCount": 0,
+        "isDeadDefinition": false
+      },
+      {
+        "variableName": "currentYear",
+        "line": 19,
+        "hasUses": true,
+        "cUseCount": 1,
+        "pUseCount": 1,
+        "isDeadDefinition": false
+      },
+      {
+        "variableName": "taxWithholding",
+        "line": 23,
+        "hasUses": true,
+        "cUseCount": 1,
+        "pUseCount": 0,
+        "isDeadDefinition": false
+      }
+    ]
+  }
+}

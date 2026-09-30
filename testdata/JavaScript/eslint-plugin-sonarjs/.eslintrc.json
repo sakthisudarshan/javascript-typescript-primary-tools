@@ -1,0 +1,10 @@
+{
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "plugins": ["sonarjs"],
+  "rules": {
+    "sonarjs/cognitive-complexity": ["error", 5]
+  }
+}

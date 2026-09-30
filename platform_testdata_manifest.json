@@ -1,0 +1,164 @@
+{
+  "platform_test_suite": "JavaScript_TypeScript_WhiteBox_Primary_Tools",
+  "specification_source": "Javascript and Typescript Primary Tools.xlsx",
+  "target_analyzed": "F:\\Javascript and Typescript\\testdata",
+  "total_validated_tools": 14,
+  "pass_rate_percent": 100.0,
+  "outputs_directory": "F:\\Javascript and Typescript\\tool_outputs",
+  "tools": [
+    {
+      "Language": "JavaScript",
+      "Tool": "Lizard",
+      "L3 Technique": "Cyclomatic Complexity",
+      "L5 Metric": "Execution Path Integrity",
+      "Expected Threshold": "CCN > 15",
+      "Emitted Value": "CCN = 27 (Threshold: 15)",
+      "Output File": "tool_outputs/lizard_javascript/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "JavaScript",
+      "Tool": "jscpd",
+      "L3 Technique": "Code Duplication",
+      "L5 Metric": "Multi-Point Failure Probability",
+      "Expected Threshold": "Clones >= 1 (Threshold: 5%)",
+      "Emitted Value": "Clones = 1, Duplication = 19.28%",
+      "Output File": "tool_outputs/jscpd_javascript/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "JavaScript",
+      "Tool": "eslint",
+      "L3 Technique": "Lint / Rule Violations",
+      "L5 Metric": "Violation Density per KLOC",
+      "Expected Threshold": "Violations > 0 (Strict gate: 0)",
+      "Emitted Value": "10 violations (9 err, 1 warn)",
+      "Output File": "tool_outputs/eslint_javascript/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "JavaScript",
+      "Tool": "eslint-plugin-sonarjs",
+      "L3 Technique": "Cognitive Complexity",
+      "L5 Metric": "Human Cognitive Load",
+      "Expected Threshold": "Cognitive Complexity > 5",
+      "Emitted Value": "Cognitive Complexity = 46",
+      "Output File": "tool_outputs/sonarjs_javascript/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "JavaScript / TS",
+      "Tool": "eslint-plugin-security",
+      "L3 Technique": "Static Vulnerabilities (SAST)",
+      "L5 Metric": "Exploit Surface Identification",
+      "Expected Threshold": "Findings > 0 (SAST gate: 0)",
+      "Emitted Value": "5 vulnerabilities (eval, exec, ReDoS, fs)",
+      "Output File": "tool_outputs/eslint_plugin_security/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "JavaScript / TS",
+      "Tool": "npm audit + npm ls",
+      "L3 Technique": "Dependency Risk (SCA)",
+      "L5 Metric": "Known CVE Count",
+      "Expected Threshold": "Known CVEs > 0 (gate: 0)",
+      "Emitted Value": "2 CVEs (lodash, minimist)",
+      "Output File": "tool_outputs/npm_audit_sca/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "JavaScript",
+      "Tool": "nyc + mocha",
+      "L3 Technique": "Statement / Branch Coverage",
+      "L5 Metric": "Branch Coverage % / Statement %",
+      "Expected Threshold": "Coverage < 90% Gate Threshold",
+      "Emitted Value": "Stmt: 84.61%, Branch: 87.5%",
+      "Output File": "tool_outputs/nyc_mocha_coverage/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "TypeScript",
+      "Tool": "Lizard",
+      "L3 Technique": "Cyclomatic Complexity",
+      "L5 Metric": "Execution Path Integrity",
+      "Expected Threshold": "CCN > 15",
+      "Emitted Value": "CCN = 25 (Threshold: 15)",
+      "Output File": "tool_outputs/lizard_typescript/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "TypeScript",
+      "Tool": "biome",
+      "L3 Technique": "Lint / Rule Violations",
+      "L5 Metric": "Syntactic Uniformity Score",
+      "Expected Threshold": "Violations > 0 (Biome gate: 0)",
+      "Emitted Value": "9 errors (debugger, noVar, noDoubleEquals)",
+      "Output File": "tool_outputs/biome_typescript/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "TypeScript",
+      "Tool": "vitest + @vitest/coverage-v8",
+      "L3 Technique": "Statement / Branch Coverage / Delta",
+      "L5 Metric": "Coverage Delta % / Statement %",
+      "Expected Threshold": "Coverage < 80% Gate Threshold",
+      "Emitted Value": "Stmt: 68.57%, Branch: 66.66%",
+      "Output File": "tool_outputs/vitest_coverage_v8/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "TypeScript",
+      "Tool": "ts-morph",
+      "L3 Technique": "All Definition / All Uses Coverage",
+      "L5 Metric": "All-Defs % / DU-Path Validation",
+      "Expected Threshold": "Dead Definitions >= 1, Coverage < 90%",
+      "Emitted Value": "All-Defs: 83.33%, Dead Defs: 1",
+      "Output File": "tool_outputs/ts_morph_du_paths/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "TypeScript",
+      "Tool": "dependency-cruiser",
+      "L3 Technique": "Path Coverage",
+      "L5 Metric": "Cross-Component Mapping",
+      "Expected Threshold": "Circular Dependency Detected",
+      "Emitted Value": "Circular loop detected: moduleA <-> moduleB",
+      "Output File": "tool_outputs/dependency_cruiser/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "TypeScript",
+      "Tool": "knip",
+      "L3 Technique": "Path Coverage",
+      "L5 Metric": "Ghost Code Discovery",
+      "Expected Threshold": "Unused exports detected",
+      "Emitted Value": "2 unused exports, 1 unused type detected",
+      "Output File": "tool_outputs/knip_ghost_code/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    },
+    {
+      "Language": "Language-Agnostic",
+      "Tool": "pydriller",
+      "L3 Technique": "Code Churn",
+      "L5 Metric": "Code Churn Score",
+      "Expected Threshold": "Git History Churn Computed",
+      "Emitted Value": "Churn engine operational",
+      "Output File": "tool_outputs/pydriller_churn/output.json",
+      "Triggered": true,
+      "Status": "PASS"
+    }
+  ]
+}

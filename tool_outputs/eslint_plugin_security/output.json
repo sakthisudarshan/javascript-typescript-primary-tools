@@ -1,0 +1,73 @@
+{
+  "tool": "eslint_plugin_security",
+  "timestamp": "2026-09-30T08:22:36Z",
+  "metadata": {
+    "metric": "Exploit Surface Identification",
+    "findings": 5
+  },
+  "data": [
+    {
+      "filePath": "F:\\Javascript and Typescript\\testdata\\JavaScript\\eslint-plugin-security\\src\\vulnerabilities.js",
+      "messages": [
+        {
+          "ruleId": "security/detect-eval-with-expression",
+          "severity": 2,
+          "message": "eval with argument of type BinaryExpression",
+          "line": 15,
+          "column": 29,
+          "nodeType": "CallExpression",
+          "endLine": 15,
+          "endColumn": 60
+        },
+        {
+          "ruleId": "security/detect-child-process",
+          "severity": 2,
+          "message": "Found child_process.exec() with non Literal first argument",
+          "line": 18,
+          "column": 5,
+          "nodeType": "CallExpression",
+          "endLine": 20,
+          "endColumn": 7
+        },
+        {
+          "ruleId": "security/detect-unsafe-regex",
+          "severity": 2,
+          "message": "Unsafe Regular Expression (new RegExp)",
+          "line": 23,
+          "column": 30,
+          "nodeType": "NewExpression",
+          "endLine": 23,
+          "endColumn": 81
+        },
+        {
+          "ruleId": "security/detect-non-literal-require",
+          "severity": 2,
+          "message": "Found non-literal argument in require",
+          "line": 27,
+          "column": 27,
+          "nodeType": "CallExpression",
+          "endLine": 27,
+          "endColumn": 46
+        },
+        {
+          "ruleId": "security/detect-non-literal-fs-filename",
+          "severity": 2,
+          "message": "Found readFileSync from package \"fs\" with non literal argument at index 0",
+          "line": 30,
+          "column": 25,
+          "nodeType": "CallExpression",
+          "endLine": 30,
+          "endColumn": 58
+        }
+      ],
+      "suppressedMessages": [],
+      "errorCount": 5,
+      "fatalErrorCount": 0,
+      "warningCount": 0,
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "source": "/**\n * Sample JavaScript file with deliberate SAST security vulnerabilities:\n * - eval() with expression\n * - child_process.exec() with user input\n * - ReDoS unsafe regular expression\n * - non-literal require\n * - non-literal fs read\n */\n\nconst fs = require('fs');\nconst cp = require('child_process');\n\nfunction executeUntrustedOperation(userInput, modulePath, fileName) {\n    // 1. detect-eval-with-expression\n    const evaluatedResult = eval(\"calc(\" + userInput + \")\");\n\n    // 2. detect-child-process\n    cp.exec(\"ping -c 1 \" + userInput, (err, stdout) => {\n        console.log(\"Exec output:\", stdout);\n    });\n\n    // 3. detect-unsafe-regex (Exponential backtracking / ReDoS)\n    const unsafeEmailRegex = new RegExp(\"([a-zA-Z0-9]+)*@([a-zA-Z0-9]+)*\\\\.com\");\n    const isMatch = unsafeEmailRegex.test(userInput);\n\n    // 4. detect-non-literal-require\n    const dynamicModule = require(modulePath);\n\n    // 5. detect-non-literal-fs-filename\n    const fileContent = fs.readFileSync(fileName, 'utf8');\n\n    return { evaluatedResult, isMatch, dynamicModule, fileContent };\n}\n\nmodule.exports = { executeUntrustedOperation };\n",
+      "usedDeprecatedRules": []
+    }
+  ]
+}

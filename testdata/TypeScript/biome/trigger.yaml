@@ -1,0 +1,21 @@
+tool: biome
+version: "1.9.4"
+language: typescript
+language_version: "TypeScript 5.x"
+technique: "Lint / Rule Violations"
+classification: "Rule Detection Test"
+target_files:
+  - src/biome_violations.ts
+run:
+  command: "npx biome lint src/biome_violations.ts --config-path=. --reporter=json"
+thresholds:
+  max_allowed_errors: 0
+expects:
+  - errors: 9
+    categories_triggered:
+      - lint/suspicious/noDebugger
+      - lint/suspicious/noDoubleEquals
+      - lint/style/noVar
+      - lint/correctness/noUnusedVariables
+      - lint/style/useConst
+    triggered: true

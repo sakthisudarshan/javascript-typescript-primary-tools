@@ -1,0 +1,18 @@
+{
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "no-unused-vars": "error",
+    "no-constant-condition": "error",
+    "no-unreachable": "error",
+    "no-debugger": "error",
+    "no-undef": "error",
+    "eqeqeq": "warn",
+    "no-var": "error"
+  }
+}

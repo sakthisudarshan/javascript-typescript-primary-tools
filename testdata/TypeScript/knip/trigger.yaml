@@ -1,0 +1,19 @@
+tool: knip
+version: "5.45.0"
+language: typescript
+technique: "Path Coverage"
+classification: "Unreachable Path Detection / Ghost Code Discovery"
+target_files:
+  - src/ghost_service.ts
+  - src/index.ts
+run:
+  command: "npx knip --reporter json"
+thresholds:
+  allow_unused_exports: false
+expects:
+  - unused_exports:
+      - ghostDeadFunctionA
+      - ghostDeadFunctionB
+    unused_types:
+      - UnusedGhostConfig
+    triggered: true

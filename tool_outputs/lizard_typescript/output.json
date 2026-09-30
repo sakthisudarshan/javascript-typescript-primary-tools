@@ -1,0 +1,12 @@
+{
+  "tool": "lizard_typescript",
+  "timestamp": "2026-09-30T08:22:38Z",
+  "metadata": {
+    "metric": "Execution Path Integrity",
+    "threshold": 15
+  },
+  "data": {
+    "raw_stdout": "================================================\n  NLOC    CCN   token  PARAM  length  location  \n------------------------------------------------\n      69     25    345      4      78 processComplexOrder@21-98@testdata/TypeScript/lizard/src/complex_order_engine.ts\n1 file analyzed.\n==============================================================\nNLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file\n--------------------------------------------------------------\n     82      69.0    25.0      345.0         1     testdata/TypeScript/lizard/src/complex_order_engine.ts\n\n===========================================================================================================\n!!!! Warnings (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100) !!!!\n================================================\n  NLOC    CCN   token  PARAM  length  location  \n------------------------------------------------\n      69     25    345      4      78 processComplexOrder@21-98@testdata/TypeScript/lizard/src/complex_order_engine.ts\n==========================================================================================\nTotal nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt\n------------------------------------------------------------------------------------------\n        82      69.0    25.0      345.0        1            1      1.00    1.00\n",
+    "ccn": 25
+  }
+}

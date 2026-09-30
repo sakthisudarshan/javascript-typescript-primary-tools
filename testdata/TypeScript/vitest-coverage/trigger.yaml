@@ -1,0 +1,19 @@
+tool: vitest-coverage-v8
+version: "3.2.7"
+language: typescript
+language_version: "TypeScript 5.x"
+technique: "Statement Coverage / Branch Coverage / Coverage Delta"
+classification: "Code Execution Verification"
+target_files:
+  - src/payment_gateway.ts
+  - test/payment_gateway.test.ts
+run:
+  command: "npx vitest run --coverage --config vite.config.ts"
+thresholds:
+  statement_coverage_min_percent: 80
+  branch_coverage_min_percent: 80
+expects:
+  - statement_coverage_pct: 68.57
+    branch_coverage_pct: 66.66
+    uncovered_lines: ["31-34", "42-48"]
+    triggered: true

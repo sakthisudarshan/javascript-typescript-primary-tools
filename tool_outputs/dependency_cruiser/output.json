@@ -1,0 +1,127 @@
+{
+  "tool": "dependency_cruiser",
+  "timestamp": "2026-09-30T08:22:49Z",
+  "metadata": {
+    "metric": "Cross-Component Mapping",
+    "circular_detected": true
+  },
+  "data": {
+    "modules": [
+      {
+        "source": "testdata/TypeScript/dependency-cruiser/src/moduleA.ts",
+        "dependencies": [
+          {
+            "module": "./moduleB",
+            "moduleSystem": "es6",
+            "dynamic": false,
+            "exoticallyRequired": false,
+            "dependencyTypes": [
+              "local",
+              "import"
+            ],
+            "resolved": "testdata/TypeScript/dependency-cruiser/src/moduleB.ts",
+            "coreModule": false,
+            "followable": true,
+            "couldNotResolve": false,
+            "matchesDoNotFollow": false,
+            "circular": true,
+            "cycle": [
+              {
+                "name": "testdata/TypeScript/dependency-cruiser/src/moduleB.ts",
+                "dependencyTypes": [
+                  "local",
+                  "import"
+                ]
+              },
+              {
+                "name": "testdata/TypeScript/dependency-cruiser/src/moduleA.ts",
+                "dependencyTypes": [
+                  "local",
+                  "import"
+                ]
+              }
+            ],
+            "valid": true
+          }
+        ],
+        "dependents": [
+          "testdata/TypeScript/dependency-cruiser/src/moduleB.ts"
+        ],
+        "orphan": false,
+        "valid": true
+      },
+      {
+        "source": "testdata/TypeScript/dependency-cruiser/src/moduleB.ts",
+        "dependencies": [
+          {
+            "module": "./moduleA",
+            "moduleSystem": "es6",
+            "dynamic": false,
+            "exoticallyRequired": false,
+            "dependencyTypes": [
+              "local",
+              "import"
+            ],
+            "resolved": "testdata/TypeScript/dependency-cruiser/src/moduleA.ts",
+            "coreModule": false,
+            "followable": true,
+            "couldNotResolve": false,
+            "matchesDoNotFollow": false,
+            "circular": true,
+            "cycle": [
+              {
+                "name": "testdata/TypeScript/dependency-cruiser/src/moduleA.ts",
+                "dependencyTypes": [
+                  "local",
+                  "import"
+                ]
+              },
+              {
+                "name": "testdata/TypeScript/dependency-cruiser/src/moduleB.ts",
+                "dependencyTypes": [
+                  "local",
+                  "import"
+                ]
+              }
+            ],
+            "valid": true
+          }
+        ],
+        "dependents": [
+          "testdata/TypeScript/dependency-cruiser/src/moduleA.ts"
+        ],
+        "orphan": false,
+        "valid": true
+      }
+    ],
+    "summary": {
+      "violations": [],
+      "error": 0,
+      "warn": 0,
+      "info": 0,
+      "ignore": 0,
+      "totalCruised": 2,
+      "totalDependenciesCruised": 2,
+      "optionsUsed": {
+        "baseDir": "F:\\Javascript and Typescript",
+        "combinedDependencies": false,
+        "detectJSDocImports": false,
+        "exoticRequireStrings": [],
+        "externalModuleResolutionStrategy": "node_modules",
+        "metrics": false,
+        "moduleSystems": [
+          "es6",
+          "cjs",
+          "tsd",
+          "amd"
+        ],
+        "outputTo": "-",
+        "outputType": "json",
+        "preserveSymlinks": false,
+        "skipAnalysisNotInRules": false,
+        "tsPreCompilationDeps": false,
+        "args": "testdata/TypeScript/dependency-cruiser/src"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+tool: eslint-plugin-security
+version: "3.0.1"
+language: javascript
+language_version: "ES2022"
+technique: "Static Vulnerabilities (SAST)"
+classification: "Security Vulnerability Detection"
+target_files:
+  - src/vulnerabilities.js
+run:
+  command: "npx eslint src/vulnerabilities.js -c .eslintrc.json --format json"
+thresholds:
+  critical_vulnerabilities_max: 0
+  high_vulnerabilities_max: 0
+expects:
+  - total_security_findings: 5
+    rules_triggered:
+      - security/detect-eval-with-expression
+      - security/detect-child-process
+      - security/detect-unsafe-regex
+      - security/detect-non-literal-require
+      - security/detect-non-literal-fs-filename
+    triggered: true

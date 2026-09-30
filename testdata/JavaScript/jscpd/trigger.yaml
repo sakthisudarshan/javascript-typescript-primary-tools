@@ -1,0 +1,20 @@
+tool: jscpd
+version: "4.3.0"
+language: javascript
+language_version: "ES2022"
+technique: "Code Duplication"
+classification: "Defect Propagation Risk Detection"
+target_files:
+  - src/user_service.js
+  - src/account_service.js
+run:
+  command: "npx jscpd src/ --reporters console --threshold 5"
+thresholds:
+  min_lines: 5
+  min_tokens: 50
+  duplication_threshold_percent: 5
+expects:
+  - clones_found: 1
+    duplicated_lines: 16
+    duplication_percentage: 19.28
+    triggered: true

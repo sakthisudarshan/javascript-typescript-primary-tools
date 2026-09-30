@@ -1,0 +1,18 @@
+tool: dependency-cruiser
+version: "16.10.0"
+language: typescript
+technique: "Path Coverage"
+classification: "CI/CD Integration Test / Cross-Component Mapping"
+target_files:
+  - src/moduleA.ts
+  - src/moduleB.ts
+run:
+  command: "npx depcruise src/ --no-config --output-type json"
+thresholds:
+  allow_circular_dependencies: false
+expects:
+  - circular_dependency_detected: true
+    cycle:
+      - src/moduleA.ts
+      - src/moduleB.ts
+    triggered: true

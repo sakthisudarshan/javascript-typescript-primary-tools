@@ -1,0 +1,34 @@
+{
+  "tool": "sonarjs_javascript",
+  "timestamp": "2026-09-30T08:22:34Z",
+  "metadata": {
+    "metric": "Human Cognitive Load",
+    "cognitive_complexity": 46
+  },
+  "data": [
+    {
+      "filePath": "F:\\Javascript and Typescript\\testdata\\JavaScript\\eslint-plugin-sonarjs\\src\\cognitive_debt.js",
+      "messages": [
+        {
+          "ruleId": "sonarjs/cognitive-complexity",
+          "severity": 2,
+          "message": "Refactor this function to reduce its Cognitive Complexity from 46 to the 5 allowed.",
+          "line": 7,
+          "column": 10,
+          "nodeType": null,
+          "messageId": "refactorFunction",
+          "endLine": 7,
+          "endColumn": 31
+        }
+      ],
+      "suppressedMessages": [],
+      "errorCount": 1,
+      "fatalErrorCount": 0,
+      "warningCount": 0,
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "source": "/**\n * Sample JavaScript file with high Cognitive Complexity.\n * Triggers sonarjs/cognitive-complexity rule due to deeply nested control flow,\n * nested loops, boolean operators within conditions, and nested branching.\n */\n\nfunction evaluateOrderDiscount(order, customer, promotions, storeConfig) {\n    let finalDiscount = 0;\n\n    if (order && order.items && order.items.length > 0) { // +1\n        if (customer && customer.membershipStatus) { // +2 (nesting = 1)\n            if (customer.membershipStatus === 'PLATINUM') { // +3 (nesting = 2)\n                finalDiscount += 0.20;\n                for (let i = 0; i < order.items.length; i++) { // +4 (nesting = 3)\n                    const item = order.items[i];\n                    if (item.category === 'ELECTRONICS' && (item.isClearance || item.stock < 5)) { // +5 (nesting = 4, +1 boolean)\n                        finalDiscount += 0.05;\n                    } else if (item.category === 'FASHION') { // +1\n                        finalDiscount += 0.02;\n                    }\n                }\n            } else if (customer.membershipStatus === 'GOLD') { // +1\n                finalDiscount += 0.10;\n                if (order.total > 500) { // +3 (nesting = 2)\n                    finalDiscount += 0.05;\n                }\n            } else {\n                finalDiscount += 0.02;\n            }\n        }\n\n        if (promotions && promotions.length > 0) { // +1\n            for (const promo of promotions) { // +2 (nesting = 1)\n                if (promo.isActive && (!promo.expiresAt || new Date(promo.expiresAt) > new Date())) { // +3 (nesting = 2, +1 boolean)\n                    if (promo.type === 'FLASH_SALE') { // +4 (nesting = 3)\n                        finalDiscount += promo.percentage || 0;\n                    }\n                }\n            }\n        }\n    } else {\n        return 0;\n    }\n\n    return finalDiscount > storeConfig.maxDiscountCap ? storeConfig.maxDiscountCap : finalDiscount; // +1\n}\n\nmodule.exports = { evaluateOrderDiscount };\n",
+      "usedDeprecatedRules": []
+    }
+  ]
+}

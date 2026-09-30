@@ -1,0 +1,47 @@
+{
+  "tool": "knip_ghost_code",
+  "timestamp": "2026-09-30T08:22:52Z",
+  "metadata": {
+    "metric": "Ghost Code Discovery",
+    "ghost_code_detected": true
+  },
+  "data": {
+    "files": [],
+    "issues": [
+      {
+        "file": "src/ghost_service.ts",
+        "dependencies": [],
+        "devDependencies": [],
+        "optionalPeerDependencies": [],
+        "unlisted": [],
+        "binaries": [],
+        "unresolved": [],
+        "exports": [
+          {
+            "name": "ghostDeadFunctionA",
+            "line": 7,
+            "col": 17,
+            "pos": 170
+          },
+          {
+            "name": "ghostDeadFunctionB",
+            "line": 11,
+            "col": 17,
+            "pos": 251
+          }
+        ],
+        "types": [
+          {
+            "name": "UnusedGhostConfig",
+            "line": 15,
+            "col": 18,
+            "pos": 317
+          }
+        ],
+        "enumMembers": {},
+        "duplicates": [],
+        "catalog": []
+      }
+    ]
+  }
+}

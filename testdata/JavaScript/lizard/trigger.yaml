@@ -1,0 +1,18 @@
+tool: lizard
+version: "1.23.0"
+language: javascript
+language_version: "ES2022"
+technique: "Cyclomatic Complexity"
+classification: "Static Analysis Metric"
+target_files:
+  - src/complex_risk.js
+run:
+  command: "lizard --xml src/ > lizard_report.xml"
+thresholds:
+  cyclomatic_complexity_warning: 10
+  cyclomatic_complexity_critical: 15
+expects:
+  - metric: "Execution Path Integrity"
+    function: "calculateComplexRiskScore"
+    cyclomatic_complexity: 27
+    triggered: true

@@ -1,0 +1,9 @@
+{
+  "name": "vulnerable-sca-fixture",
+  "version": "1.0.0",
+  "description": "Fixture with pinned vulnerable dependencies for SCA detection",
+  "dependencies": {
+    "lodash": "4.17.15",
+    "minimist": "1.2.0"
+  }
+}

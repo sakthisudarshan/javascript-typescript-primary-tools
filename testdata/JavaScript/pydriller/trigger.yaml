@@ -1,0 +1,14 @@
+tool: pydriller
+version: "2.10"
+language: language-agnostic
+technique: "Code Churn"
+classification: "Risk-Based Testing Prioritization"
+target_files:
+  - analyze_churn.py
+run:
+  command: "python analyze_churn.py ."
+thresholds:
+  high_risk_churn_score: 50
+expects:
+  - metric: "Code Churn Score"
+    triggered: true

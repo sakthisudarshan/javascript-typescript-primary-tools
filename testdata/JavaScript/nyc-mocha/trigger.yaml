@@ -1,0 +1,19 @@
+tool: nyc-mocha
+version: "17.1.0"
+language: javascript
+language_version: "ES2022"
+technique: "Statement Coverage / Branch Coverage"
+classification: "Code Execution Verification"
+target_files:
+  - src/calculator.js
+  - test/calculator.test.js
+run:
+  command: "npx nyc --reporter=json-summary mocha test/calculator.test.js"
+thresholds:
+  statement_coverage_min_percent: 90
+  branch_coverage_min_percent: 90
+expects:
+  - statement_coverage_pct: 84.61
+    branch_coverage_pct: 87.5
+    uncovered_lines: [25, 26]
+    triggered: true

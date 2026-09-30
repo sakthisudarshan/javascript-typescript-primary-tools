@@ -1,0 +1,24 @@
+tool: eslint
+version: "8.57.1"
+language: javascript
+language_version: "ES2022"
+technique: "Lint / Rule Violations"
+classification: "Rule Detection Test"
+target_files:
+  - src/lint_violations.js
+run:
+  command: "npx eslint src/lint_violations.js -c .eslintrc.json --format json"
+thresholds:
+  max_allowed_errors: 0
+  max_allowed_warnings: 0
+expects:
+  - error_count: 9
+    warning_count: 1
+    total_violations: 10
+    rules_triggered:
+      - no-var
+      - no-unused-vars
+      - eqeqeq
+      - no-constant-condition
+      - no-debugger
+    triggered: true

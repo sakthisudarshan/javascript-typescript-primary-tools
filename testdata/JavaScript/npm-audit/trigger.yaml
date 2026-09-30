@@ -1,0 +1,22 @@
+tool: npm-audit
+version: "10.9.2"
+language: javascript
+language_version: "Node 22"
+technique: "Dependency Risk (SCA)"
+classification: "Vulnerability Dependency Detection"
+target_files:
+  - package.json
+  - package-lock.json
+run:
+  command: "npm audit --json"
+thresholds:
+  critical_vulnerabilities_max: 0
+  high_vulnerabilities_max: 0
+expects:
+  - total_vulnerabilities: 2
+    high: 1
+    critical: 1
+    vulnerable_packages:
+      - lodash
+      - minimist
+    triggered: true

@@ -1,0 +1,22 @@
+tool: ts-morph
+version: "25.0.1"
+language: typescript
+language_version: "TypeScript 5.x"
+technique: "All Definition Coverage / All Uses Coverage"
+classification: "Data Flow DU-Path Analysis"
+target_files:
+  - src/du_paths.ts
+run:
+  command: "npx ts-node analyze_du_coverage.ts src/du_paths.ts"
+thresholds:
+  all_defs_coverage_min_percent: 90
+  all_uses_coverage_min_percent: 90
+expects:
+  - total_definitions: 6
+    covered_definitions: 5
+    dead_definitions: 1
+    all_defs_coverage_pct: 83.33
+    total_uses: 11
+    c_uses: 9
+    p_uses: 2
+    triggered: true

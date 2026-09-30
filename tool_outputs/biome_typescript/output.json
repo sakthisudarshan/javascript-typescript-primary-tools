@@ -1,0 +1,1474 @@
+{
+  "tool": "biome_typescript",
+  "timestamp": "2026-09-30T08:22:40Z",
+  "metadata": {
+    "metric": "Syntactic Uniformity Score",
+    "errors": 9
+  },
+  "data": {
+    "summary": {
+      "changed": 0,
+      "unchanged": 1,
+      "matches": 0,
+      "duration": {
+        "secs": 0,
+        "nanos": 4184500
+      },
+      "errors": 9,
+      "warnings": 0,
+      "skipped": 0,
+      "suggestedFixesSkipped": 0,
+      "diagnosticsNotPrinted": 0
+    },
+    "diagnostics": [
+      {
+        "category": "lint/style/noInferrableTypes",
+        "severity": "error",
+        "description": "This type annotation is trivially inferred from its initialization.",
+        "message": [
+          {
+            "elements": [],
+            "content": "This type annotation is trivially inferred from its initialization."
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Safe fix: Remove the type annotation."
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var) */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 4
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          121
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          121,
+                          131
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "delete": {
+                        "range": [
+                          131,
+                          140
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "insert": {
+                        "range": [
+                          112,
+                          113
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          140,
+                          142
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          142,
+                          286
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 9
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          286,
+                          338
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            352,
+            360
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      },
+      {
+        "category": "lint/suspicious/noDoubleEquals",
+        "severity": "error",
+        "description": "Use === instead of ==. == is only allowed when comparing against `null`",
+        "message": [
+          {
+            "elements": [],
+            "content": "Use "
+          },
+          {
+            "elements": [
+              "Emphasis"
+            ],
+            "content": "==="
+          },
+          {
+            "elements": [],
+            "content": " instead of "
+          },
+          {
+            "elements": [
+              "Emphasis"
+            ],
+            "content": "=="
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "=="
+                  },
+                  {
+                    "elements": [],
+                    "content": " is only allowed when comparing against "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "null"
+                  }
+                ]
+              ]
+            },
+            {
+              "frame": {
+                "path": null,
+                "span": [
+                  577,
+                  579
+                ],
+                "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+              }
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Using "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "=="
+                  },
+                  {
+                    "elements": [],
+                    "content": " may be unsafe if you are relying on type coercion"
+                  }
+                ]
+              ]
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unsafe fix: Use "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "==="
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA ==0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 9
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          181
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          181,
+                          183
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "insert": {
+                        "range": [
+                          181,
+                          182
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          113
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          183,
+                          277
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 4
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          277,
+                          329
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            577,
+            579
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      },
+      {
+        "category": "lint/suspicious/noDebugger",
+        "severity": "error",
+        "description": "This is an unexpected use of the debugger statement.",
+        "message": [
+          {
+            "elements": [],
+            "content": "This is an unexpected use of the "
+          },
+          {
+            "elements": [
+              "Emphasis"
+            ],
+            "content": "debugger"
+          },
+          {
+            "elements": [],
+            "content": " statement."
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unsafe fix: Remove debugger statement"
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 9
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          217
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "delete": {
+                        "range": [
+                          217,
+                          260
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          260,
+                          284
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 3
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          284,
+                          336
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            622,
+            631
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      },
+      {
+        "category": "lint/style/noVar",
+        "severity": "error",
+        "description": "Use let or const instead of var.",
+        "message": [
+          {
+            "elements": [],
+            "content": "Use "
+          },
+          {
+            "elements": [
+              "Emphasis"
+            ],
+            "content": "let"
+          },
+          {
+            "elements": [],
+            "content": " or "
+          },
+          {
+            "elements": [
+              "Emphasis"
+            ],
+            "content": "const"
+          },
+          {
+            "elements": [],
+            "content": " instead of "
+          },
+          {
+            "elements": [
+              "Emphasis"
+            ],
+            "content": "var"
+          },
+          {
+            "elements": [],
+            "content": "."
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "A variable declared with "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "var"
+                  },
+                  {
+                    "elements": [],
+                    "content": " is accessible in the whole module. Thus, the variable can be accessed before its initialization and outside the block where it is declared."
+                  }
+                ]
+              ]
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "See "
+                  },
+                  {
+                    "elements": [
+                      {
+                        "Hyperlink": {
+                          "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var"
+                        }
+                      }
+                    ],
+                    "content": "MDN web docs"
+                  },
+                  {
+                    "elements": [],
+                    "content": " for more details."
+                  }
+                ]
+              ]
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unsafe fix: Use '"
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "const"
+                  },
+                  {
+                    "elements": [],
+                    "content": "' instead."
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var) */\n\nvarconstglobalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 4
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          117
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "delete": {
+                        "range": [
+                          117,
+                          120
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "insert": {
+                        "range": [
+                          120,
+                          125
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          113
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          125,
+                          290
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 9
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          290,
+                          342
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            338,
+            365
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      },
+      {
+        "category": "lint/correctness/noUnusedVariables",
+        "severity": "error",
+        "description": "This variable is unused.",
+        "message": [
+          {
+            "elements": [],
+            "content": "This variable is unused."
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unused variables usually are result of incomplete refactoring, typos and other source of bugs."
+                  }
+                ]
+              ]
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unsafe fix: If this is intentional, prepend "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "globalSeed"
+                  },
+                  {
+                    "elements": [],
+                    "content": " with an underscore."
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var) */\n\nvar globalSeed_globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 4
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          121
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "delete": {
+                        "range": [
+                          121,
+                          131
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "insert": {
+                        "range": [
+                          131,
+                          142
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          142,
+                          297
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 9
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          297,
+                          349
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            342,
+            352
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      },
+      {
+        "category": "lint/correctness/noUnusedVariables",
+        "severity": "error",
+        "description": "This parameter is unused.",
+        "message": [
+          {
+            "elements": [],
+            "content": "This parameter is unused."
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unused variables usually are result of incomplete refactoring, typos and other source of bugs."
+                  }
+                ]
+              ]
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unsafe fix: If this is intentional, prepend "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "unusedParam"
+                  },
+                  {
+                    "elements": [],
+                    "content": " with an underscore."
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)var globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam_unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 6
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          251
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "delete": {
+                        "range": [
+                          251,
+                          262
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "insert": {
+                        "range": [
+                          262,
+                          274
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          274,
+                          347
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 7
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          347,
+                          399
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            477,
+            488
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      },
+      {
+        "category": "lint/style/useConst",
+        "severity": "error",
+        "description": "This let declares a variable that is only assigned once.",
+        "message": [
+          {
+            "elements": [],
+            "content": "This "
+          },
+          {
+            "elements": [
+              "Emphasis"
+            ],
+            "content": "let"
+          },
+          {
+            "elements": [],
+            "content": " declares a variable that is only assigned once."
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "'unmutatedMultiplier' is never reassigned."
+                  }
+                ]
+              ]
+            },
+            {
+              "frame": {
+                "path": null,
+                "span": [
+                  516,
+                  535
+                ],
+                "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+              }
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Safe fix: Use "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "const"
+                  },
+                  {
+                    "elements": [],
+                    "content": " instead."
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)var globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    letconst unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 6
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          281
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          281,
+                          286
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "delete": {
+                        "range": [
+                          286,
+                          289
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "insert": {
+                        "range": [
+                          289,
+                          294
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          294,
+                          295
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          295,
+                          392
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 6
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          392,
+                          444
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            512,
+            515
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      },
+      {
+        "category": "lint/style/useConst",
+        "severity": "error",
+        "description": "This let declares a variable that is only assigned once.",
+        "message": [
+          {
+            "elements": [],
+            "content": "This "
+          },
+          {
+            "elements": [
+              "Emphasis"
+            ],
+            "content": "let"
+          },
+          {
+            "elements": [],
+            "content": " declares a variable that is only assigned once."
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "'deadVariable' is never reassigned."
+                  }
+                ]
+              ]
+            },
+            {
+              "frame": {
+                "path": null,
+                "span": [
+                  690,
+                  702
+                ],
+                "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+              }
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Safe fix: Use "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "const"
+                  },
+                  {
+                    "elements": [],
+                    "content": " instead."
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    letconstdeadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 12
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          178
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          178,
+                          184
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "delete": {
+                        "range": [
+                          184,
+                          187
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "insert": {
+                        "range": [
+                          187,
+                          192
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          113
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          192,
+                          298
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            686,
+            689
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      },
+      {
+        "category": "lint/correctness/noUnusedVariables",
+        "severity": "error",
+        "description": "This variable is unused.",
+        "message": [
+          {
+            "elements": [],
+            "content": "This variable is unused."
+          }
+        ],
+        "advices": {
+          "advices": [
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unused variables usually are result of incomplete refactoring, typos and other source of bugs."
+                  }
+                ]
+              ]
+            },
+            {
+              "log": [
+                "info",
+                [
+                  {
+                    "elements": [],
+                    "content": "Unsafe fix: If this is intentional, prepend "
+                  },
+                  {
+                    "elements": [
+                      "Emphasis"
+                    ],
+                    "content": "deadVariable"
+                  },
+                  {
+                    "elements": [],
+                    "content": " with an underscore."
+                  }
+                ]
+              ]
+            },
+            {
+              "diff": {
+                "dictionary": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)    }\n\n    let deadVariable_deadVariable= 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n",
+                "ops": [
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          0,
+                          112
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "equalLines": {
+                      "line_count": 14
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          127
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "delete": {
+                        "range": [
+                          127,
+                          139
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "insert": {
+                        "range": [
+                          139,
+                          152
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          112,
+                          113
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "diffOp": {
+                      "equal": {
+                        "range": [
+                          152,
+                          245
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "verboseAdvices": {
+          "advices": []
+        },
+        "location": {
+          "path": {
+            "file": "testdata/TypeScript/biome/src/biome_violations.ts"
+          },
+          "span": [
+            690,
+            702
+          ],
+          "sourceCode": "/**\n * Sample TypeScript file containing deliberate violations targeted for Biome:\n * - style/noVar (use of var)\n * - correctness/noUnusedVariables (unused variable and param)\n * - suspicious/noDoubleEquals (use of == instead of ===)\n * - suspicious/noDebugger (debugger statement)\n * - style/useConst (let that is never reassigned)\n */\n\nvar globalSeed: number = 42; // style/noVar, correctness/noUnusedVariables\n\nexport function computeMetrics(inputA: number, inputB: number, unusedParam: string): number {\n    let unmutatedMultiplier = 1.5; // style/useConst\n\n    if (inputA == 0) { // suspicious/noDoubleEquals\n        debugger; // suspicious/noDebugger\n        return 0;\n    }\n\n    let deadVariable = 999; // correctness/noUnusedVariables\n\n    return inputA * inputB * unmutatedMultiplier;\n}\n"
+        },
+        "tags": [
+          "fixable"
+        ],
+        "source": null
+      }
+    ],
+    "command": "lint"
+  }
+}

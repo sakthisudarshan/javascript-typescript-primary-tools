@@ -1,0 +1,148 @@
+{
+  "tool": "eslint_javascript",
+  "timestamp": "2026-09-30T08:22:31Z",
+  "metadata": {
+    "metric": "Violation Density per KLOC",
+    "errors": 9,
+    "warnings": 1
+  },
+  "data": [
+    {
+      "filePath": "F:\\Javascript and Typescript\\testdata\\JavaScript\\eslint\\src\\lint_violations.js",
+      "messages": [
+        {
+          "ruleId": "no-var",
+          "severity": 2,
+          "message": "Unexpected var, use let or const instead.",
+          "line": 11,
+          "column": 1,
+          "nodeType": "VariableDeclaration",
+          "messageId": "unexpectedVar",
+          "endLine": 11,
+          "endColumn": 29,
+          "fix": {
+            "range": [
+              288,
+              291
+            ],
+            "text": "let"
+          }
+        },
+        {
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+          "message": "'legacyGlobalCounter' is assigned a value but never used.",
+          "line": 11,
+          "column": 5,
+          "nodeType": "Identifier",
+          "messageId": "unusedVar",
+          "endLine": 11,
+          "endColumn": 24
+        },
+        {
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+          "message": "'unusedConfigSetting' is assigned a value but never used.",
+          "line": 12,
+          "column": 7,
+          "nodeType": "Identifier",
+          "messageId": "unusedVar",
+          "endLine": 12,
+          "endColumn": 26
+        },
+        {
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+          "message": "'tempCalculation' is assigned a value but never used.",
+          "line": 13,
+          "column": 5,
+          "nodeType": "Identifier",
+          "messageId": "unusedVar",
+          "endLine": 13,
+          "endColumn": 20
+        },
+        {
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+          "message": "'currency' is defined but never used.",
+          "line": 15,
+          "column": 37,
+          "nodeType": "Identifier",
+          "messageId": "unusedVar",
+          "endLine": 15,
+          "endColumn": 45
+        },
+        {
+          "ruleId": "no-var",
+          "severity": 2,
+          "message": "Unexpected var, use let or const instead.",
+          "line": 16,
+          "column": 5,
+          "nodeType": "VariableDeclaration",
+          "messageId": "unexpectedVar",
+          "endLine": 16,
+          "endColumn": 29,
+          "fix": {
+            "range": [
+              519,
+              522
+            ],
+            "text": "let"
+          }
+        },
+        {
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+          "message": "'discountRate' is assigned a value but never used.",
+          "line": 16,
+          "column": 9,
+          "nodeType": "Identifier",
+          "messageId": "unusedVar",
+          "endLine": 16,
+          "endColumn": 21
+        },
+        {
+          "ruleId": "eqeqeq",
+          "severity": 1,
+          "message": "Expected '===' and instead saw '=='.",
+          "line": 18,
+          "column": 16,
+          "nodeType": "BinaryExpression",
+          "messageId": "unexpected",
+          "endLine": 18,
+          "endColumn": 18
+        },
+        {
+          "ruleId": "no-constant-condition",
+          "severity": 2,
+          "message": "Unexpected constant condition.",
+          "line": 22,
+          "column": 9,
+          "nodeType": "Literal",
+          "messageId": "unexpected",
+          "endLine": 22,
+          "endColumn": 13
+        },
+        {
+          "ruleId": "no-debugger",
+          "severity": 2,
+          "message": "Unexpected 'debugger' statement.",
+          "line": 23,
+          "column": 9,
+          "nodeType": "DebuggerStatement",
+          "messageId": "unexpected",
+          "endLine": 23,
+          "endColumn": 18
+        }
+      ],
+      "suppressedMessages": [],
+      "errorCount": 9,
+      "fatalErrorCount": 0,
+      "warningCount": 1,
+      "fixableErrorCount": 2,
+      "fixableWarningCount": 0,
+      "source": "/**\n * Sample JavaScript file with deliberate lint violations:\n * - no-var (use of var)\n * - no-unused-vars (unused variables)\n * - no-constant-condition (while(true))\n * - no-debugger (debugger statement)\n * - eqeqeq (loose equality ==)\n * - no-unreachable (dead code after return)\n */\n\nvar legacyGlobalCounter = 0; // violation: no-var\nconst unusedConfigSetting = \"strict_mode\"; // violation: no-unused-vars\nlet tempCalculation = 100; // violation: no-unused-vars\n\nfunction processTransaction(amount, currency) {\n    var discountRate = 0.05; // violation: no-var, no-unused-vars\n    \n    if (amount == 0) { // violation: eqeqeq\n        return \"FREE\";\n    }\n\n    if (true) { // violation: no-constant-condition\n        debugger; // violation: no-debugger\n        return amount * 1.18;\n    }\n\n    const deadCodeResult = amount * 2; // violation: no-unreachable, no-unused-vars\n    return deadCodeResult;\n}\n\nmodule.exports = { processTransaction };\n",
+      "usedDeprecatedRules": []
+    }
+  ]
+}
