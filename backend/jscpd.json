@@ -1,0 +1,7 @@
+{
+  "threshold": 5,
+  "reporters": ["json", "console"],
+  "output": "./jscpd_report",
+  "minLines": 5,
+  "minTokens": 30
+}

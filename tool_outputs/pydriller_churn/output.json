@@ -1,15 +1,230 @@
 {
   "tool": "pydriller_churn",
-  "timestamp": "2026-09-30T08:22:53Z",
+  "timestamp": "2026-09-30T10:16:05Z",
   "metadata": {
     "metric": "Code Churn Score"
   },
   "data": {
-    "total_commits_analyzed": 0,
-    "files_modified": {},
-    "total_lines_added": 0,
+    "total_commits_analyzed": 2,
+    "files_modified": {
+      ".gitignore": {
+        "modifications_count": 2,
+        "added": 6,
+        "deleted": 0
+      },
+      "package-lock.json": {
+        "modifications_count": 2,
+        "added": 9594,
+        "deleted": 0
+      },
+      "primary_tools_validator-checkpoint.ipynb": {
+        "modifications_count": 1,
+        "added": 1097,
+        "deleted": 0
+      },
+      "primary_tools_validator.ipynb": {
+        "modifications_count": 1,
+        "added": 834,
+        "deleted": 0
+      },
+      "package.json": {
+        "modifications_count": 3,
+        "added": 51,
+        "deleted": 0
+      },
+      "platform_testdata_manifest.json": {
+        "modifications_count": 1,
+        "added": 164,
+        "deleted": 0
+      },
+      ".eslintrc.json": {
+        "modifications_count": 3,
+        "added": 43,
+        "deleted": 0
+      },
+      "README.md": {
+        "modifications_count": 14,
+        "added": 212,
+        "deleted": 0
+      },
+      "run_security.sh": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      },
+      "vulnerabilities.js": {
+        "modifications_count": 1,
+        "added": 35,
+        "deleted": 0
+      },
+      "trigger.yaml": {
+        "modifications_count": 14,
+        "added": 274,
+        "deleted": 0
+      },
+      "run_sonarjs.sh": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      },
+      "cognitive_debt.js": {
+        "modifications_count": 1,
+        "added": 48,
+        "deleted": 0
+      },
+      "run_eslint.sh": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      },
+      "lint_violations.js": {
+        "modifications_count": 1,
+        "added": 31,
+        "deleted": 0
+      },
+      "run_jscpd.sh": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      },
+      "account_service.js": {
+        "modifications_count": 1,
+        "added": 42,
+        "deleted": 0
+      },
+      "user_service.js": {
+        "modifications_count": 1,
+        "added": 41,
+        "deleted": 0
+      },
+      "run_lizard.sh": {
+        "modifications_count": 2,
+        "added": 22,
+        "deleted": 0
+      },
+      "complex_risk.js": {
+        "modifications_count": 1,
+        "added": 84,
+        "deleted": 0
+      },
+      "run_audit.sh": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      },
+      "run_coverage.sh": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      },
+      "calculator.js": {
+        "modifications_count": 1,
+        "added": 36,
+        "deleted": 0
+      },
+      "calculator.test.js": {
+        "modifications_count": 1,
+        "added": 18,
+        "deleted": 0
+      },
+      "analyze_churn.py": {
+        "modifications_count": 1,
+        "added": 43,
+        "deleted": 0
+      },
+      "biome.json": {
+        "modifications_count": 1,
+        "added": 23,
+        "deleted": 0
+      },
+      "run_biome.sh": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      },
+      "biome_violations.ts": {
+        "modifications_count": 1,
+        "added": 23,
+        "deleted": 0
+      },
+      "moduleA.ts": {
+        "modifications_count": 1,
+        "added": 5,
+        "deleted": 0
+      },
+      "moduleB.ts": {
+        "modifications_count": 1,
+        "added": 5,
+        "deleted": 0
+      },
+      "ghost_service.ts": {
+        "modifications_count": 1,
+        "added": 18,
+        "deleted": 0
+      },
+      "index.ts": {
+        "modifications_count": 1,
+        "added": 5,
+        "deleted": 0
+      },
+      "complex_order_engine.ts": {
+        "modifications_count": 1,
+        "added": 98,
+        "deleted": 0
+      },
+      "analyze_du_coverage.ts": {
+        "modifications_count": 1,
+        "added": 107,
+        "deleted": 0
+      },
+      "du_paths.ts": {
+        "modifications_count": 1,
+        "added": 30,
+        "deleted": 0
+      },
+      "coverage-final.json": {
+        "modifications_count": 1,
+        "added": 2,
+        "deleted": 0
+      },
+      "coverage-summary.json": {
+        "modifications_count": 1,
+        "added": 3,
+        "deleted": 0
+      },
+      "run_vitest.sh": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      },
+      "payment_gateway.ts": {
+        "modifications_count": 1,
+        "added": 56,
+        "deleted": 0
+      },
+      "payment_gateway.test.ts": {
+        "modifications_count": 1,
+        "added": 29,
+        "deleted": 0
+      },
+      "vite.config.ts": {
+        "modifications_count": 1,
+        "added": 13,
+        "deleted": 0
+      },
+      "output.json": {
+        "modifications_count": 14,
+        "added": 2356,
+        "deleted": 0
+      },
+      "tsconfig.json": {
+        "modifications_count": 1,
+        "added": 11,
+        "deleted": 0
+      }
+    },
+    "total_lines_added": 15547,
     "total_lines_deleted": 0,
-    "churn_score": 0,
-    "error": "F:\\Javascript and Typescript"
+    "churn_score": 15547
   }
 }

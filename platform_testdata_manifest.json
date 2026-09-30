@@ -1,7 +1,7 @@
 {
   "platform_test_suite": "JavaScript_TypeScript_WhiteBox_Primary_Tools",
   "specification_source": "Javascript and Typescript Primary Tools.xlsx",
-  "target_analyzed": "F:\\Javascript and Typescript\\testdata",
+  "target_analyzed": "F:\\Javascript and Typescript",
   "total_validated_tools": 14,
   "pass_rate_percent": 100.0,
   "outputs_directory": "F:\\Javascript and Typescript\\tool_outputs",

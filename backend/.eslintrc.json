@@ -1,0 +1,28 @@
+{
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "security",
+    "sonarjs"
+  ],
+  "rules": {
+    "no-var": "error",
+    "no-unused-vars": "error",
+    "no-constant-condition": "error",
+    "no-debugger": "error",
+    "eqeqeq": "error",
+    "no-unreachable": "error",
+    "sonarjs/cognitive-complexity": ["error", 5],
+    "security/detect-eval-with-expression": "error",
+    "security/detect-child-process": "warn",
+    "security/detect-unsafe-regex": "error",
+    "security/detect-non-literal-require": "warn",
+    "security/detect-non-literal-fs-filename": "warn"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "all": true,
+  "include": [
+    "src/utils/calculator.js"
+  ],
+  "reporter": [
+    "text",
+    "json-summary",
+    "json"
+  ],
+  "check-coverage": false
+}

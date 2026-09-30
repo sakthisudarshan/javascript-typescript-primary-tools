@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend Node.js & Express REST API with Primary Analysis Tool Triggers",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha test/**/*.test.js",
+    "coverage": "nyc --reporter=text --reporter=json-summary mocha test/**/*.test.js",
+    "lint": "eslint src/",
+    "lint:security": "eslint src/controllers/securityController.js",
+    "jscpd": "jscpd src/"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "lodash": "4.17.15",
+    "minimist": "1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-sonarjs": "^0.24.0",
+    "jscpd": "^4.0.5",
+    "mocha": "^11.1.0",
+    "nyc": "^17.1.0"
+  }
+}

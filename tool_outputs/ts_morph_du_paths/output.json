@@ -1,6 +1,6 @@
 {
   "tool": "ts_morph_du_paths",
-  "timestamp": "2026-09-30T08:22:45Z",
+  "timestamp": "2026-09-30T10:15:57Z",
   "metadata": {
     "metric": "All-Defs % / DU-Path Validation",
     "coverage_pct": 83.33,

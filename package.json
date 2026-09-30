@@ -1,14 +1,22 @@
 {
-  "name": "js-ts-primary-tools-validation",
+  "name": "javascript-typescript-primary-tools",
   "version": "1.0.0",
-  "description": "Validation harness and testdata fixtures for JavaScript and TypeScript Primary Tools",
+  "description": "Full-stack JavaScript (backend) and TypeScript (frontend) primary tools test repository",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
-    "test:mocha": "mocha",
-    "test:vitest": "vitest run",
-    "lint:eslint": "eslint",
-    "lint:biome": "biome check",
-    "duplication:jscpd": "jscpd",
-    "coverage:nyc": "nyc mocha"
+    "build": "npm run build --workspace=frontend",
+    "start": "npm run start --workspace=backend",
+    "test": "npm run test --workspace=backend && npm run test --workspace=frontend",
+    "lint": "npm run lint --workspace=backend && npm run lint --workspace=frontend",
+    "coverage": "npm run coverage --workspace=backend && npm run coverage --workspace=frontend"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
